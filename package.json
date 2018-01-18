@@ -4,7 +4,7 @@
   "description": "a toolkit for help you generate magaele",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -16,11 +16,12 @@
   "author": "jivecheng",
   "license": "ISC",
   "bin": {
-    "magaele": "./bin/command.js"
+    "maga-generator": "./bin/command.js"
   },
   "dependencies": {
     "commander": "^2.9.0",
-    "deep-extend": "^0.4.1"
+    "deep-extend": "^0.4.1",
+    "shebang-loader": "0.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",

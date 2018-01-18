@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "watch": "webpack --watch",
     "develop": "cross-env NODE_ENV=develop webpack",
     "publish": "cross-env NODE_ENV=production webpack"
   },
