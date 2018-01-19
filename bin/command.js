@@ -6,37 +6,63 @@ const program = require('commander');
 const readline = require('readline');
 const deepExtend = require('deep-extend');
 
-
-console.log(path.resolve(), path.dirname(process.argv[1]));
-
-let MagaGenerator = function(options) {
+let MagaGenerator = function() {
 	this.rl = readline.createInterface({
-		input:process.stdin,
-		output:process.stdout
+		input: process.stdin,
+		output: process.stdout
 	});
-	this.interfaceString = {
-		home: `
-Please choose a module template:
- 1) [non-component] style-only module of Magaele
- 2) [non-component] jquery-plugin module of Magaele
- 3) [component] react functional component of Magaele
- 4) [component] react class component of Magaele
- `
+	this.interface = {
+		view: {
+			home: `
+Magaele
+ 1) [non-component] style-only module
+ 2) [non-component] jquery-plugin module
+ 3) [component] react functional component
+ 4) [component] react class component
+Please choose a template: `
+ 		}
 	};
-	this.path = {
-		module: path.resolve(),
-		runtime: path.dirname(process.argv[1])
+	this.path = {};
+	this.path.root = {
+		users: path.resolve(),
+		global: path.resolve(path.dirname(process.argv[1]), '../')
 	};
+	this.path.template = {
+		'magaele': {
+			'component': {
+				'react': {
+					'class': './lib/tmpl/element/component/react/class',
+					'functional': './lib/tmpl/element/component/react/functional'
+				}
+			},
+			'non-component': {
+				'style-only': './lib/tmpl/element/non-component/style-only',
+				'jquery-plugin': './lib/tmpl/element/non-component/jquery-plugin'
+			}
+		}
+	}
+	this.path.map = {
+		'1': this.path.template.magaele['non-component']['style-only'],
+		'2': this.path.template.magaele['non-component']['jquery-plugin'],
+		'3': this.path.template.magaele.component.react.functional,
+		'4': this.path.template.magaele.component.react.class
+	};
+	this.regex = {
+		option: /[1234]/g
+	}
 };
 
-// rl.question(interfaceString.home, (answer) => {
-	
-// 	rl.close();
-// });	
+let MagaGen = new MagaGenerator();
 
-// rl.on("close", function(){
-// 	// 结束程序
-	
-// 	process.exit(0);
-// });
-console.log('runstart');
+MagaGen.rl.question(MagaGen.interface.view.home, (answer) => {
+	if ( MagaGen.regex.option.test(answer) ) {
+		console.log(answer);
+	} else {
+		throw 'option error!';
+	}
+	MagaGen.rl.close();
+});	
+
+MagaGen.rl.on("close", function(){
+	process.exit(0);
+});
