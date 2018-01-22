@@ -1,5 +1,5 @@
 {
-  "name": "@magaele/sample",
+  "name": "@magaele/<!-- @echo ModuleName -->",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,9 +10,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://git.liontech.com.tw/_sample.jquery.git"
+    "url": "<!-- @echo RepoUrl -->"
   },
-  "author": "jivecheng",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
@@ -23,10 +22,12 @@
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
-    "imports-loader": "^0.7.1",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "uglifyjs-webpack-plugin": "^0.4.6",
+    "vash": "^0.12.4",
+    "render-template-loader": "^1.0.0",
     "webpack": "^3.0.0",
     "webpack-shell-plugin": "^0.5.0"
   }

@@ -20,8 +20,10 @@
   },
   "dependencies": {
     "commander": "^2.9.0",
+    "copy-dir": "^0.3.0",
     "deep-extend": "^0.4.1",
-    "shebang-loader": "0.0.1"
+    "preprocess": "^3.1.0",
+    "remote-origin-url": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",

@@ -5,15 +5,17 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="../core/core.css" rel="stylesheet">
-	<title>單獨模組樣式檢視</title>
+	<link href="../css.css" rel="stylesheet">
+	<title>Magaele: <!-- @echo ModuleName --></title>
 </head>
 <body>
-<div class="container example">
+<div class="container">
 	<div class="row">
-		<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
-			<!-- 制定HTML結構 開始 -->
-
-			<!-- 制定HTML結構 結束 -->
+		<div class="col-xs-24">
+@html.include('template.cshtml', {
+	Modifier: 'modifier',
+	Data: 'string'
+})
 		</div>
 	</div>
 </div>
