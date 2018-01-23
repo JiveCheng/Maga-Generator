@@ -66,7 +66,7 @@ const MagaGenerator = class {
 			},
 			rewrites: {
 				'1': ['preview.cshtml', 'css.scss', 'template.cshtml', 'package.json'],
-				'2': [],
+				'2': ['preview.cshtml', 'css.scss', 'template.cshtml', 'package.json', 'script/module.js'],
 				'3': [],
 				'4': []
 			}
