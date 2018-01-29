@@ -68,7 +68,7 @@ const MagaGenerator = class {
 				'1': ['preview.cshtml', 'css.scss', 'template.cshtml', 'package.json'],
 				'2': ['preview.cshtml', 'css.scss', 'template.cshtml', 'package.json', 'script/module.js'],
 				'3': [],
-				'4': []
+				'4': ['template.html', 'preview.js', 'package.json', 'css.scss', 'components/Module.js']
 			}
 		}
 		this.regex = {
