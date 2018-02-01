@@ -22,6 +22,8 @@
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
+    "eslint": "^4.16.0",
+    "eslint-config-alloy": "^1.4.1",
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",

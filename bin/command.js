@@ -107,7 +107,10 @@ const MagaGenerator = class {
 				let filePath = path.resolve(this.path.root.users, filename);
 				pp.preprocessFileSync(filePath, filePath, {
 					ModuleName : this.moduleName,
-					RepoUrl: 'http://git.liontech.com.tw/' + this.moduleName + '.git'
+					ModuleReactName: this.moduleName.split('_').map(( val ) => {
+						return val.charAt(0).toUpperCase() + val.slice(1);
+					}).join(''),
+					RepoUrl: 'http://git.liontech.com.tw/' + this.moduleName + '.git',
 				});
 			});
 		} else {
