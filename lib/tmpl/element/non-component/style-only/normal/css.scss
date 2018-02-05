@@ -1,43 +1,34 @@
-// -------------------------------------
-// Susy Import
-// -------------------------------------
-//@import "susy";
-// -------------------------------------
-// Core Mixins
-// -------------------------------------
-@import "../core/core/mixins";
-// -------------------------------------
-// Variables Import
-// -------------------------------------
-// 載入全域變數
-@import "../core/core/variables";
-// -------------------------------------
-// Components / Modules Setting
-// -------------------------------------
-// 請輸入您的ClassName
-$classname: '/* @echo ModuleName */';
-// -------------------------------------
-// 您的CSS Code
-// -------------------------------------
-//以下範例可以刪除，改為您自已的CSS Code
-.#{$classname} {
-	// style on phone device
-	@media screen and (min-width: $screen-tablet) {
-		// style on tablet device
-	}
-	@media screen and (min-width: $screen-desktop) {
-		// style on desktop device
-	}
-	@media screen and (min-width: $screen-lg-desktop) {
-		// style on desktop device
-	}
-	&.#{$classname}_modifier {
-		
-	}
-	& > .#{$classname}_child {
-		
-	}
-	& .#{$classname}_descendant {
-
-	}
-}
+/**
+ * Import core mixins, variables, or others
+ */
+ @import "../core/core/mixins";
+ @import "../core/core/variables";
+ /**
+  * Define your classname
+  */
+ $classname: '/* @echo ModuleName */';
+ /*
+  * Start your css code
+  */
+ .#{$classname} {
+	 // style on phone device
+	 @media screen and (min-width: $screen-tablet) {
+		 // style on tablet device
+	 }
+	 @media screen and (min-width: $screen-desktop) {
+		 // style on desktop device
+	 }
+	 @media screen and (min-width: $screen-lg-desktop) {
+		 // style on desktop device
+	 }
+ 
+	 &_modifier {
+		 
+	 }
+	 & > .#{$classname}_child {
+		 
+	 }
+	 & .#{$classname}_descendant {
+ 
+	 }
+ }
