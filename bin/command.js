@@ -20,7 +20,8 @@ const MagaGenerator = class {
 				+ ' 1) [non-component] style-only module\n'
 				+ ' 2) [non-component] jquery-plugin module\n'
 				+ ' 3) [component] react functional component\n'
-				+ ' 4) [component] react class component\n'
+				+ ' 4) [component] react pure component\n'
+				+ ' 5) [component] react class component\n'
 				+ 'Please choose a template: '
 	 		}
 		};
@@ -42,6 +43,7 @@ const MagaGenerator = class {
 				'component': {
 					'react': {
 						'class': './lib/tmpl/element/component/react/class',
+						'pure': './lib/tmpl/element/component/react/pure',
 						'functional': './lib/tmpl/element/component/react/functional'
 					}
 				},
@@ -55,24 +57,27 @@ const MagaGenerator = class {
 			'1': this.path.template.magaele['non-component']['style-only'],
 			'2': this.path.template.magaele['non-component']['jquery-plugin'],
 			'3': this.path.template.magaele.component.react.functional,
-			'4': this.path.template.magaele.component.react.class
+			'4': this.path.template.magaele.component.react.pure,
+			'5': this.path.template.magaele.component.react.class
 		};
 		this.map = {
 			path: {
 				'1': this.path.template.magaele['non-component']['style-only'],
 				'2': this.path.template.magaele['non-component']['jquery-plugin'],
 				'3': this.path.template.magaele.component.react.functional,
-				'4': this.path.template.magaele.component.react.class
+				'4': this.path.template.magaele.component.react.pure,
+				'5': this.path.template.magaele.component.react.class
 			},
 			rewrites: {
 				'1': ['preview.cshtml', 'css.scss', 'template.cshtml', 'package.json'],
 				'2': ['preview.cshtml', 'css.scss', 'template.cshtml', 'package.json', 'script/module.js'],
 				'3': ['template.html', 'preview.js', 'package.json', 'css.scss', 'components/Module.js'],
-				'4': ['template.html', 'preview.js', 'package.json', 'css.scss', 'components/Module.js']
+				'4': ['template.html', 'preview.js', 'package.json', 'css.scss', 'components/Module.js'],
+				'5': ['template.html', 'preview.js', 'package.json', 'css.scss', 'components/Module.js']
 			}
 		}
 		this.regex = {
-			option: /[1234]/g
+			option: /[12345]/g
 		}
 		this.moduleName = this.path.dirname.users.replace(/^\_/g);
 	}
