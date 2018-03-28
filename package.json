@@ -1,0 +1,36 @@
+{
+  "name": "@liontravel/maga-generator",
+  "version": "0.2.0",
+  "description": "a toolkit for help you generate magaele",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JiveCheng/Maga-Generator.git"
+  },
+  "keywords": [
+    "magaele"
+  ],
+  "author": "jivecheng",
+  "license": "ISC",
+  "bin": {
+    "maga-generator": "./bin/command.js"
+  },
+  "dependencies": {
+    "commander": "^2.9.0",
+    "copy-dir": "^0.3.0",
+    "deep-extend": "^0.4.1",
+    "preprocess": "^3.1.0",
+    "remote-origin-url": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.0",
+    "babel-preset-env": "^1.5.2",
+    "cross-env": "^5.0.1",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.10.0"
+  }
+}
