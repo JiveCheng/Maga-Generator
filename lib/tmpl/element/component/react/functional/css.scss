@@ -11,6 +11,7 @@ $classname: '/* @echo ModuleName */';
  * Start your css code
  */
 .#{$classname} {
+    display: block;
     // style on phone device
     @media screen and (min-width: $screen-tablet) {
      // style on tablet device
