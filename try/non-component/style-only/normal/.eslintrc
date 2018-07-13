@@ -1,0 +1,8 @@
+{
+    "parser": "babel-eslint",
+    "extends": "eslint-config-alloy",
+    "rules": {
+      "no-void": "off",
+      "space-before-function-paren": ["error", "always"]
+    }
+  }

@@ -69,7 +69,7 @@ const MagaGenerator = class {
 				'5': this.path.template.magaele.component.react.class
 			},
 			rewrites: {
-				'1': ['preview.cshtml', 'css.scss', 'template.cshtml', 'package.json'],
+				'1': ['src/preview.html', 'src/css.scss', 'package.json'],
 				'2': ['preview.cshtml', 'css.scss', 'template.cshtml', 'package.json', 'script/module.js'],
 				'3': ['template.html', 'preview.js', 'package.json', 'css.scss', 'components/Module.js'],
 				'4': ['template.html', 'preview.js', 'package.json', 'css.scss', 'components/Module.js'],
@@ -91,6 +91,7 @@ const MagaGenerator = class {
 					if( !err ){
 						console.log('success!');
 						this.rewriteName(answer);
+						fs.rename(`${this.path.root.users}/.npmignore`, `${this.path.root.users}/.gitignore`)
 						this.rl.close();
 					} else {
 						console.log(err);
@@ -102,10 +103,10 @@ const MagaGenerator = class {
 			
 		});	
 	}
-	copy ( answer, callback ) {
+	copy (answer, callback) {
 		copydir(path.resolve(this.path.root.global, this.map.path[answer]), this.path.root.users, callback);
 	}
-	rewriteName ( answer ) {
+	rewriteName (answer) {
 		let rewrites = this.map.rewrites[answer];
 		if ( Array.isArray(rewrites) && rewrites.length > 0 ) {
 			rewrites.forEach(( filename, index ) => {
