@@ -1,6 +1,6 @@
 {
   "name": "@liontravel/maga-generator",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "a toolkit for help you generate magaele",
   "main": "index.js",
   "scripts": {
